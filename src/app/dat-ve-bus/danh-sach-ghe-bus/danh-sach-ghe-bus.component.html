@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 style="color: rgb(90, 135, 202); font-family: 'Times New Roman', Times, serif " class="text-center mb-4 mt-3">ĐẶT
+    VÉ XE
+    BUS</h1>
+  <div class="row">
+    <div class="col-md-6 mt-3">
+      <ng-container *ngFor="let item of mangGhe; let STT = index">
+        <app-ghe-bus [ghe]="item" (eventGhe)="daChonGhe($event)"></app-ghe-bus>
+        <br *ngIf="(STT+1)%4 === 0">
+      </ng-container>
+
+    </div>
+
+    <div class="col-md-6">
+      <h4 style="color: rgb(112, 45, 65); font-family: 'Times New Roman', Times, serif " class="mb-3" >Danh Sách Ghế Được Chọn</h4>
+      <p *ngFor="let item of danhSachGheDaDat">Ghế  số {{item.SoGhe}} Có giá {{item.Gia}}$ <span style="color: red; text-decoration: underline ; cursor: pointer;"class="px-2" (click)="HuyChonGhe(item)"> Huỷ </span></p>
+    </div>
+  </div>
+</div>
